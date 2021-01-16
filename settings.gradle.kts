@@ -1,2 +1,2 @@
 rootProject.name = "GradleSrcPlayground"
-include ':app'
+include(":app")
