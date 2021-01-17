@@ -1,7 +1,6 @@
 package plugins
 
 import com.android.build.gradle.BaseExtension
-import com.android.build.gradle.LibraryExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
@@ -23,9 +22,7 @@ internal fun Project.configureAndroidApplicationPlugins() {
 internal fun Project.configureAndroidConfig() = this.extensions.getByType<BaseExtension>().run {
     compileSdkVersion(30)
     defaultConfig {
-        if (this@run !is LibraryExtension)
-            applicationId = "com.funshofab.gradlesrcplayground"
-
+        applicationId = "com.funshofab.gradlesrcplayground"
         minSdkVersion(21)
         targetSdkVersion(30)
         versionCode = 1
