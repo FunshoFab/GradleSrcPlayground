@@ -1,3 +1,5 @@
+package plugins
+
 import com.android.build.gradle.BaseExtension
 import com.android.build.gradle.LibraryExtension
 import org.gradle.api.JavaVersion
@@ -5,7 +7,20 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-internal fun Project.configureAndroid() = this.extensions.getByType<BaseExtension>().run {
+class AndroidAppGradlePlugin : BaseAndroidGradlePlugin() {
+    override fun apply(target: Project) {
+        // Apply the most important plugin "com.android.application" before others
+        target.configureAndroidApplicationPlugins()
+        target.configureAndroidConfig()
+        super.apply(target)
+    }
+}
+
+internal fun Project.configureAndroidApplicationPlugins() {
+    plugins.apply("com.android.application")
+}
+
+internal fun Project.configureAndroidConfig() = this.extensions.getByType<BaseExtension>().run {
     compileSdkVersion(30)
     defaultConfig {
         if (this@run !is LibraryExtension)

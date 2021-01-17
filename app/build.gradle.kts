@@ -1,5 +1,5 @@
 plugins {
-    id("com.funshofab")
+    id("com.funshofab.android")
 }
 
 dependencies {
