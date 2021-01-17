@@ -1,5 +1,7 @@
 package plugins
 
+import deps.GradlePluginsConfig.KOTLIN_ANDROID
+import deps.GradlePluginsConfig.KOTLIN_KAPT
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -11,6 +13,6 @@ open class BaseAndroidGradlePlugin : Plugin<Project> {
 }
 
 internal fun Project.configureKotlinAndroidPlugins() {
-    plugins.apply("kotlin-android")
-    plugins.apply("kotlin-kapt")
+    plugins.apply(KOTLIN_ANDROID)
+    plugins.apply(KOTLIN_KAPT)
 }

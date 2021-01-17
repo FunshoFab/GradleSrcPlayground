@@ -1,5 +1,6 @@
 package plugins
 
+import deps.GradlePluginsConfig.KOTLIN
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -10,5 +11,5 @@ open class KotlinModuleGradlePlugin : Plugin<Project> {
 }
 
 internal fun Project.configureKotlin() {
-    plugins.apply("kotlin")
+    plugins.apply(KOTLIN)
 }
