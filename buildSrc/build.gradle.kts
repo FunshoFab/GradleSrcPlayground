@@ -10,7 +10,7 @@ repositories {
 
 object Plugin {
     object Version {
-        const val GRADLE = "7.0.0-alpha04"
+        const val GRADLE = "7.1.0-alpha03"
         const val KOTLIN_GRADLE = "1.4.21"
     }
 
