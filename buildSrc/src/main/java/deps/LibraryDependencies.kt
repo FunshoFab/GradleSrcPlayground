@@ -7,35 +7,36 @@ interface Library {
 object LibraryDependencies {
     object AndroidX : Library {
         object Version {
-            const val CORE_KTX = "1.3.2"
-            const val APP_COMPAT = "1.2.0"
+            const val coreKtx = "1.3.2"
+            const val appCompat = "1.2.0"
         }
 
-        const val CORE_KTX = "androidx.core:core-ktx:${Version.CORE_KTX}"
-        const val APP_COMPAT = "androidx.appcompat:appcompat:${Version.APP_COMPAT}"
+        private const val coreKtx = "androidx.core:core-ktx:${Version.coreKtx}"
+        private const val appCompat = "androidx.appcompat:appcompat:${Version.appCompat}"
 
         override val components: List<String> =
-            listOf(CORE_KTX, APP_COMPAT)
+            listOf(coreKtx, appCompat)
     }
 
     object View : Library {
         object Version {
-            const val MATERIAL = "1.2.1"
-            const val CONSTRAINT_LAYOUT = "2.0.4"
+            const val material = "1.2.1"
+            const val constraintLayout = "2.0.4"
         }
 
-        const val MATERIAL = "com.google.android.material:material:${Version.MATERIAL}"
-        const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:${Version.CONSTRAINT_LAYOUT}"
+        private const val material = "com.google.android.material:material:${Version.material}"
+        private const val constraintLayout =
+            "androidx.constraintlayout:constraintlayout:${Version.constraintLayout}"
 
         override val components: List<String> =
-            listOf(MATERIAL, CONSTRAINT_LAYOUT)
+            listOf(material, constraintLayout)
     }
 
     object Test {
         object Version {
-            const val JUNIT = "4.13.1"
+            const val junit = "4.13.1"
         }
 
-        const val JUNIT = "junit:junit:${Version.JUNIT}"
+        const val junit = "junit:junit:${Version.junit}"
     }
 }

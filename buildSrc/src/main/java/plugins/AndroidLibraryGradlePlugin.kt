@@ -1,6 +1,6 @@
 package plugins
 
-import deps.GradlePluginsConfig.ANDROID_LIBRARY
+import deps.GradlePluginsConfig.androidLibrary
 import org.gradle.api.Project
 
 class AndroidLibraryGradlePlugin : BaseAndroidGradlePlugin() {
@@ -12,5 +12,5 @@ class AndroidLibraryGradlePlugin : BaseAndroidGradlePlugin() {
 }
 
 internal fun Project.addLibraryPlugin() {
-    plugins.apply(ANDROID_LIBRARY)
+    plugins.apply(androidLibrary)
 }

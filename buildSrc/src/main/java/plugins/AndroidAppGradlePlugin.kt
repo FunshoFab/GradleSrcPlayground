@@ -1,6 +1,6 @@
 package plugins
 
-import deps.GradlePluginsConfig.ANDROID_APPLICATION
+import deps.GradlePluginsConfig.androidApplication
 import org.gradle.api.Project
 
 class AndroidAppGradlePlugin : BaseAndroidGradlePlugin() {
@@ -12,5 +12,5 @@ class AndroidAppGradlePlugin : BaseAndroidGradlePlugin() {
 }
 
 internal fun Project.addApplicationPlugin() {
-    plugins.apply(ANDROID_APPLICATION)
+    plugins.apply(androidApplication)
 }

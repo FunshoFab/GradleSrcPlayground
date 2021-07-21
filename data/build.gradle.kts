@@ -7,5 +7,5 @@ plugins {
 
 dependencies {
     implementAll(AndroidX.components)
-    testImplementation(Test.JUNIT)
+    testImplementation(Test.junit)
 }

@@ -8,11 +8,10 @@ plugins {
 }
 
 dependencies {
-    implementation(project(Modules.DATA))
-    implementation(project(Modules.DOMAIN))
+    implementation(project(Modules.data))
+    implementation(project(Modules.domain))
 
-    implementation(AndroidX.APP_COMPAT)
     implementAll(AndroidX.components)
     implementAll(View.components)
-    testImplementation(Test.JUNIT)
+    testImplementation(Test.junit)
 }

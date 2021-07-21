@@ -1,6 +1,6 @@
 package deps
 
 object Modules {
-    const val DOMAIN = ":domain"
-    const val DATA = ":data"
+    const val domain = ":domain"
+    const val data = ":data"
 }

@@ -11,16 +11,16 @@ import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 internal fun Project.addAndroidBlock() = this.extensions.getByType<BaseExtension>().run {
-    compileSdkVersion(AndroidConfig.COMPILE_SDK_VERSION)
+    compileSdkVersion(AndroidConfig.compileSdkVersion)
     defaultConfig {
         if (this@run !is LibraryExtension)
-            applicationId = AndroidConfig.APPLICATION_ID
+            applicationId = AndroidConfig.applicationId
 
-        minSdkVersion(AndroidConfig.MIN_SDK_VERSION)
-        targetSdkVersion(AndroidConfig.TARGET_SDK_VERSION)
-        versionCode = AndroidConfig.VERSION_CODE
-        versionName = AndroidConfig.VERSION_NAME
-        testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
+        minSdk = AndroidConfig.minSdkVersion
+        targetSdk = AndroidConfig.targetSdkVersion
+        versionCode = AndroidConfig.versionCode
+        versionName = AndroidConfig.versionName
+        testInstrumentationRunner = AndroidConfig.testInstrumentationRunner
     }
 
     buildTypes {
@@ -37,13 +37,13 @@ internal fun Project.addAndroidBlock() = this.extensions.getByType<BaseExtension
     }
 
     compileOptions {
-        sourceCompatibility = JavaConfig.JAVA_VERSION
-        targetCompatibility = JavaConfig.JAVA_VERSION
+        sourceCompatibility = JavaConfig.javaVersion
+        targetCompatibility = JavaConfig.javaVersion
     }
 
     project.tasks.withType(KotlinCompile::class.java).configureEach {
         kotlinOptions {
-            jvmTarget = JavaConfig.JAVA_VERSION.toString()
+            jvmTarget = JavaConfig.javaVersion.toString()
         }
     }
 }
